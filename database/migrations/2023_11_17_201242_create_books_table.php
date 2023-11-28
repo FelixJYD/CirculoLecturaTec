@@ -1,4 +1,4 @@
-book 
+
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -12,8 +12,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('book', function (Blueprint $table){
-            $table->id();
+        Schema::create('books', function (Blueprint $table){
+            $table->id('id');
+            $table->string('name_book');
             $table->string('author')->nullable();
             $table->text('description')->nullable();
             $table->integer('publication_year')->nullable();

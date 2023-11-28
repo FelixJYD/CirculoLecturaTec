@@ -11,17 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('report', function (Blueprint $table){
+        Schema::create('reports', function (Blueprint $table){
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('book_id');
+            $table->foreignId('tuition_students')
+            ->constrained('students')
+            ->cascadeOnDelete();
+            $table->foreignId('name_book')
+            ->constrained('books')
+            ->cascadeOnDelete();
             $table->string('cont_report');
-            $table->string('comment');
             $table->timestamps();
-
-            //Definicion de llaves foraneas 
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('book_id')->references('id')->on('book');
         });
     }
 
