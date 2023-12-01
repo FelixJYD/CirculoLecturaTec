@@ -1,3 +1,4 @@
+book 
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -11,14 +12,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('circles', function (Blueprint $table) {
-            $table->id('id');
-            $table->string('name_c');
-            $table->foreignId('book_id')
-            ->constrained('books')
-            ->cascadeOnDelete();
-            $table->timestamps();
-
+        Schema::create('book', function (Blueprint $table){
+            $table->id();
+            $table->string('author')->nullable();
+            $table->text('description')->nullable();
+            $table->integer('publication_year')->nullable();
+            $table->string('genre')->nullable();
+            
         });
     }
 
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('circles');
+        //
     }
 };

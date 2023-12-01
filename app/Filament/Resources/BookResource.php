@@ -2,11 +2,10 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\CircleResource\Pages;
-use App\Filament\Resources\CircleResource\RelationManagers;
-use App\Models\Circle;
+use App\Filament\Resources\BookResource\Pages;
+use App\Filament\Resources\BookResource\RelationManagers;
+use App\Models\Book;
 use Filament\Forms;
-use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -16,9 +15,9 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class CircleResource extends Resource
+class BookResource extends Resource
 {
-    protected static ?string $model = Circle::class;
+    protected static ?string $model = Book::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -26,12 +25,12 @@ class CircleResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('name_c')->required(),
-                Select::make('book_id')
-                ->relationship('books','name')
-                ->required()
-                ->searchable()
-                ->preload()
+                TextInput::make('name')->required(),
+                TextInput::make('author')->required(),
+                TextInput::make('description')->required(),
+                TextInput::make('publication_year')->required(),
+                TextInput::make('genre')->required(),
+
             ]);
     }
 
@@ -39,10 +38,13 @@ class CircleResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('name_c')->searchable(),
-                TextColumn::make('book_id')->searchable(),
-                TextColumn::make('created_at')->dateTime()->sortable()->toggleable(isToggledHiddenByDefault:true),
-                TextColumn::make('updated_at')->dateTime()->sortable()->toggleable(isToggledHiddenByDefault:true),
+                TextColumn::make('id')->searchable(),
+                TextColumn::make('name')->searchable(),
+                TextColumn::make('author')->searchable(),
+                TextColumn::make('description')->searchable(),
+                TextColumn::make('publication_year')->searchable(),
+                TextColumn::make('genre')->searchable(),
+                
             ])
             ->filters([
                 //
@@ -70,9 +72,9 @@ class CircleResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListCircles::route('/'),
-            'create' => Pages\CreateCircle::route('/create'),
-            'edit' => Pages\EditCircle::route('/{record}/edit'),
+            'index' => Pages\ListBooks::route('/'),
+            'create' => Pages\CreateBook::route('/create'),
+            'edit' => Pages\EditBook::route('/{record}/edit'),
         ];
     }    
 }

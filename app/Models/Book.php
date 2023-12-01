@@ -8,9 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Book extends Model
 {
     use HasFactory;
-    protected $fillable = ['id'];
+    protected $fillable = [
+        'name',
+        'author',
+        'description',
+        'publication_year',
+        'genre'
+    ];
 
-    public function circles(){
-        return $this->belongsTo(Circle::class, 'id');
+    public function circle(){
+        return $this->hasOne(Circle::class);
     }
 }
