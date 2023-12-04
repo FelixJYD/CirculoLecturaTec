@@ -1,7 +1,8 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
 import Footer from '@/Components/Footer.vue';
-
+import Login from '@/Pages/Auth/Login.vue';
+import Register from '@/Pages/Auth/Register.vue';
 
 defineProps({
     canLogin: {
@@ -34,12 +35,16 @@ defineProps({
         </div>
         
         <div class="space-x-4 ml-auto">
-          <button @click="iniciarSesion" class="custom-button">
-            Iniciar Sesión
-          </button>
-          <button @click="registrarse" class="custom-button">
-            Registrarse
-          </button>
+          <Link :href="route('login')">
+            <button @click="iniciarSesion" class="custom-button">
+             Iniciar Sesión
+           </button>
+          </Link>
+          <Link :href="route('register')">
+           <button @click="registrarse" class="custom-button">
+             Registrarse
+           </button>
+          </Link>
         </div>
       </div>
   
