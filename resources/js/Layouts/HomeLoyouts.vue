@@ -28,11 +28,11 @@ defineProps({
     <div>
   
       <!-- Header Section -->
-      <div class="flex flex-col md:flex-row items-center p-4 bg-gray-200">
+      <div class="flex flex-col md:flex-row items-center p-4 #b9d6f2">
         <!-- Logo on the left -->
-        <div class="flex-shrink-0">
-          <img class="h-24" src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Logo-TecNM-2017.png" alt="Logo">
-        </div>
+        <div style="display: flex; align-items: flex-start;">
+  <img src="/storage/images/TECNONEGRO.png" alt="ITSS Logo" width="200" height="240" />
+</div>
         
         <div class="space-x-4 ml-auto">
           <Link :href="route('login')">
@@ -49,14 +49,14 @@ defineProps({
       </div>
   
       <!-- Main Content Section -->
-      <div class="container mx-auto mt-8 flex flex-col md:flex-row items-center">
-        <div class="w-full md:w-1/2 pr-4">
-          <h1 class="text-4xl md:text-8xl font-extrabold mb-5 pl-12">Bienvenido al Foro de Lectura ITSS</h1>
-        </div>
-        <div class="w-full md:w-1/2 mt-4 md:mt-0">
-          <img src="https://i.ibb.co/h2xZZVT/Captura-de-pantalla-2023-11-12-121737.png" alt="" class="w-full h-auto">
-        </div>
-      </div>
+      <div class="container mx-auto mt-[-20px] flex flex-col md:flex-row items-center">
+  <div class="w-full md:w-1/2 pr-4">
+    <h1 class="text-4xl md:text-8xl font-extrabold mb-5 pl-15">Bienvenido al Foro de Lectura ITSS</h1>
+  </div>
+  <div class="w-full md:w-1/2 mt-[-20px] md:mt-0">
+    <img src="/storage/images/TECCIRCULO.png" alt="" class="w-full h-auto">
+  </div>
+</div>
   
       <div class="mt-8"></div>
   
@@ -161,7 +161,7 @@ defineProps({
     }
   
     .custom-button {
-      color: #1b5470;
+      color: #000000;
       background-color: transparent;
       border-radius: 16px;
       padding: 15px 30px;
