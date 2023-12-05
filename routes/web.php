@@ -37,6 +37,10 @@ Route::get('/about', function () {
     return Inertia::render('About');
 })->middleware(['auth', 'verified'])->name('about');
 
+Route::get('/report', function () {
+    return Inertia::render('Reports');
+})->middleware(['auth', 'verified'])->name('report');
+
 
 
 Route::middleware('auth')->group(function () {
