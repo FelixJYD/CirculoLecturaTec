@@ -6,6 +6,7 @@ use App\Filament\Resources\BookResource\Pages;
 use App\Filament\Resources\BookResource\RelationManagers;
 use App\Models\Book;
 use Filament\Forms;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -30,6 +31,7 @@ class BookResource extends Resource
                 TextInput::make('description')->required(),
                 TextInput::make('publication_year')->required(),
                 TextInput::make('genre')->required(),
+                FileUpload::make('cover_image')->image()->required()
 
             ]);
     }
@@ -44,6 +46,7 @@ class BookResource extends Resource
                 TextColumn::make('description')->searchable(),
                 TextColumn::make('publication_year')->searchable(),
                 TextColumn::make('genre')->searchable(),
+                TextColumn::make('cover_image')->searchable()
                 
             ])
             ->filters([
