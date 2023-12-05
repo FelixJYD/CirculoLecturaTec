@@ -13,7 +13,8 @@ class Book extends Model
         'author',
         'description',
         'publication_year',
-        'genre'
+        'genre',
+        'cover_image'
     ];
 
     public function circle(){

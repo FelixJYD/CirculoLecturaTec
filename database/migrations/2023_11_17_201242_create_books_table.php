@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->integer('publication_year')->nullable();
             $table->string('genre')->nullable();
+            $table->string('cover_image')->nullable();
             $table->timestamps();
             
         });
