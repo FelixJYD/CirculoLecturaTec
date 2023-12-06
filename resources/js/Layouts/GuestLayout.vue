@@ -27,8 +27,9 @@
 
 <style scoped>
 .bg-with-opacity {
-  background: url('/storage/app/public/images/IA.jpg') center/cover no-repeat;
-  opacity: 150;
+  background: #172554; 
+  opacity: 0.9;
+  color: #ffffff; 
   
 }
 </style>
