@@ -123,8 +123,8 @@ defineProps({
             Mario Benedetti
           </p>
         </div>
-        <div class="container mx-auto md:w-1/2 mt-4 md:mt-0">
-          <img src="https://s2.abcstatics.com/media/cultura/2020/09/14/Mario-Benedetti-kHfG-U401206819722nVG-620x649@abc.jpg" class="w-full md:w-2/3 lg:w-2/3 h-auto md:pt-2 pl-36 rounded">
+        <div class="container mx-auto md:w-1/2 mt-4 md:mt-0 ">
+          <img src="https://s2.abcstatics.com/media/cultura/2020/09/14/Mario-Benedetti-kHfG-U401206819722nVG-620x649@abc.jpg" class=" rounded-3xl w-full md:w-2/3 lg:w-2/3 h-auto md:pt-2 pl-36">
         </div>
       </div>
 
