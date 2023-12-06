@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Models\Book;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -30,7 +31,9 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/foros', function () {
-    return Inertia::render('Foros');
+    return Inertia::render('Foros', [
+        'books'=>Book::get()
+    ]);
 })->middleware(['auth', 'verified'])->name('foros');
 
 Route::get('/about', function () {
@@ -48,5 +51,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::get('/circles-data', [CircleController::class, 'getCirclesData']);
 
 require __DIR__.'/auth.php';

@@ -31,7 +31,12 @@ class CircleResource extends Resource
                 ->relationship('books','name')
                 ->required()
                 ->searchable()
-                ->preload()
+                ->preload(),
+                Select::make('book_image')
+                ->relationship('books','image')
+                ->required()
+                ->searchable()
+                ->preload(),
             ]);
     }
 
@@ -41,6 +46,7 @@ class CircleResource extends Resource
             ->columns([
                 TextColumn::make('name_c')->searchable(),
                 TextColumn::make('book_id')->searchable(),
+                TextColumn::make('book_image')->searchable(),
                 TextColumn::make('created_at')->dateTime()->sortable()->toggleable(isToggledHiddenByDefault:true),
                 TextColumn::make('updated_at')->dateTime()->sortable()->toggleable(isToggledHiddenByDefault:true),
             ])
