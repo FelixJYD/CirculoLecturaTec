@@ -56,7 +56,7 @@ import { Head } from '@inertiajs/vue3';
         <div class="bg-blue-950 overflow-hidden shadow-sm sm:rounded-lg">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 p-6"> 
                 <div class="card"> 
-                    
+
                     <!-- LINEA DE TIEMPO ACTIVIDADES -->
                     <div class="w-full">
                     <div class="py-12">
@@ -106,7 +106,7 @@ import { Head } from '@inertiajs/vue3';
                 <div class="bg-blue-950 overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 text-xl text-white">
                         Flujo De Actividades Pendientes -->
-                        <!-- Agrega la lista ordenada (ol) aquí -->
+                        
                         <!-- <ol class="relative border-s border-white dark:border-white">
                             <li class="mb-10 ms-4">
                         <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-white"></div>
@@ -178,7 +178,7 @@ import { Head } from '@inertiajs/vue3';
     }
 
     .card:hover img {
-        transform: scale(1.1); /* Ajusta el valor según sea necesario para el efecto deseado */
-        filter: brightness(1.2); /* Ajusta el valor para resaltar o sombrear la imagen */
+        transform: scale(1.1); 
+        filter: brightness(1.2); 
     }
 </style>
