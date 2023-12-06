@@ -29,7 +29,7 @@ defineProps({
 <style>
 
 body {
-    background-color: #dee8f1; 
+    background-color: #172554; 
   }
 
 </style>
