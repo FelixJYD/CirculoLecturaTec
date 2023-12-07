@@ -27,35 +27,34 @@ defineProps({
 <template v-else>
     <div>
   
-      <!-- Header Section -->
-      <div class="flex flex-col md:flex-row items-center p-4 #b9d6f2">
-        <!-- Logo on the left -->
-        <div style="display: flex; align-items: flex-start;">
-  <img src="/storage/images/TECNO.png" alt="ITSS Logo" width="200" height="240" />
-</div>
-        
-        <div class="space-x-4 ml-auto">
-          <Link :href="route('login')">
-            <button @click="iniciarSesion" class="custom-button">
-             Iniciar Sesión
-           </button>
-          </Link>
-          <Link :href="route('register')">
-           <button @click="registrarse" class="custom-button">
-             Registrarse
-           </button>
-          </Link>
-        </div>
+    
+    <!-- Navbar -->
+    <nav class="flex justify-between items-center bg-blue-950 p-4">
+      <!-- Logo -->
+      <img src="/storage/images/TECNO.png" alt="Logo" class="w-44 h-auto">
+
+     <!-- Enlaces -->
+     <div class="flex items-center space-x-4">
+      <a :href="route('login')" class="custom-link text-xs font-extrabold text-white md:text-base p-2 md:p-4" @click="iniciarSesion">
+      Iniciar Sesión
+    </a>
+    <a :href="route('register')" class="custom-link text-xs font-extrabold text-white md:text-base p-2 md:p-4" @click="registrarse">
+      Registrarse
+    </a>
       </div>
+    </nav>
+
+
+
   
-      <!-- Main Content Section -->
+      
     <!-- Main Content Section -->
     <div class="container mx-auto mt-[-20px] flex flex-col md:flex-row items-center">
   <div class="w-full md:w-1/2 md:pr-4 order-2 md:order-1">
     <h1 class="text-4xl md:text-8xl font-extrabold mb-5 pl-15">Bienvenido al Foro de Lectura ITSS</h1>
   </div>
   <div class="w-full md:w-1/2 mt-[-20px] md:mt-0 md:order-2">
-    <img src="/storage/images/tecblue2.jpg" alt="" class="w-full md:w-4/4 h-auto">
+    <img src="/storage/images/tecblue2.jpg" alt="" class="w-full md:w-5/5 h-auto">
   </div>
 </div>
   
@@ -125,7 +124,7 @@ defineProps({
           </p>
         </div>
         <div class="container mx-auto md:w-1/2 mt-4 md:mt-0 ">
-          <img src="https://s2.abcstatics.com/media/cultura/2020/09/14/Mario-Benedetti-kHfG-U401206819722nVG-620x649@abc.jpg" class=" rounded-3xl w-full md:w-2/3 lg:w-2/3 h-auto md:pt-2 pl-36">
+          <img src="https://s2.abcstatics.com/media/cultura/2020/09/14/Mario-Benedetti-kHfG-U401206819722nVG-620x649@abc.jpg" class="  w-full md:w-2/3 lg:w-2/3 h-auto md:pt-2 pl-36">
         </div>
       </div>
 
@@ -183,6 +182,7 @@ defineProps({
     .bg-custom-blue-light {
       background-color: #192B67;
     }
+   
   </style>
 
 
