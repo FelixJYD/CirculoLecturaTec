@@ -32,7 +32,7 @@ const handleSubmit = () => {
         </template>
 
         <div class="py-6">
-            <div class="container mx-auto flex px-44">
+            <div class="container mx-auto flex px-20">
                 <div class="left-side flex-1 p-6 bg-white border-r-2 border-white bg-blue-900 sm:rounded-lg">
                    
                     
