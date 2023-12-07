@@ -130,16 +130,28 @@ const showingNavigationDropdown = ref(false);
                     :class="{ block: showingNavigationDropdown, hidden: !showingNavigationDropdown }"
                     class="sm:hidden"
                 >
-                    <div class="pt-2 pb-3 space-y-1">
-                        <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                            Dashboard
-                        </ResponsiveNavLink>
-                    </div>
+                   <div class="pt-2 pb-3 space-y-1">
+                  <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
+                    Inicio
+                </ResponsiveNavLink>
+    
+                <ResponsiveNavLink :href="route('foros')" :active="route().current('foros')">
+                 Foros
+                 </ResponsiveNavLink>
+
+                 <ResponsiveNavLink :href="route('report')" :active="route().current('report')">
+                 Reportes
+                 </ResponsiveNavLink>
+
+                 <ResponsiveNavLink :href="route('about')" :active="route().current('about')">
+                 Acerca de
+                 </ResponsiveNavLink>
+</div>
 
                     <!-- Responsive Settings Options -->
                     <div class="pt-4 pb-1 border-t border-gray-200">
                         <div class="px-4">
-                            <div class="font-medium text-base text-gray-800">
+                            <div class="font-medium text-base text-white">
                                 {{ $page.props.auth.user.name }}
                             </div>
                             <div class="font-medium text-sm text-gray-500">{{ $page.props.auth.user.email }}</div>
