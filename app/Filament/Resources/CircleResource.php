@@ -31,7 +31,8 @@ class CircleResource extends Resource
                 ->relationship('books','name')
                 ->required()
                 ->searchable()
-                ->preload()
+                ->preload(),
+                
             ]);
     }
 

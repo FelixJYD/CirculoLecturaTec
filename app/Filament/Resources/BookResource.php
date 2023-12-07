@@ -31,7 +31,7 @@ class BookResource extends Resource
                 TextInput::make('description')->required(),
                 TextInput::make('publication_year')->required(),
                 TextInput::make('genre')->required(),
-                FileUpload::make('cover_image')->image()->required()
+                
 
             ]);
     }
@@ -46,7 +46,7 @@ class BookResource extends Resource
                 TextColumn::make('description')->searchable(),
                 TextColumn::make('publication_year')->searchable(),
                 TextColumn::make('genre')->searchable(),
-                TextColumn::make('cover_image')->searchable()
+                
                 
             ])
             ->filters([

@@ -3,9 +3,21 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import { Head } from "@inertiajs/vue3";
 import Editor from "primevue/editor";
 import Button from 'primevue/button';
+import { useForm } from '@inertiajs/vue3'
 
-const mostrarAlerta = () => {
-  alert("Reporte enviado...");
+
+const form = useForm({
+  user_id: 1,
+  book_id: 1,
+  cont_report: null,
+  remember: false,
+});
+
+const handleSubmit = () => {
+  form.post('/reportes').then(() => {
+    alert('Reporte enviado'); //Alerta que se ejecutara 
+    //despues de que el reporte sea enviado exitosamente
+  })
 };
 </script>
 
@@ -22,28 +34,21 @@ const mostrarAlerta = () => {
         <div class="py-6">
             <div class="container mx-auto flex px-44">
                 <div class="left-side flex-1 p-6 bg-white border-r-2 border-white bg-blue-900 sm:rounded-lg">
-                    <h1 class="font-semibold text-white">Circulo de Lectura: Frankenstein {{  }}</h1>
-                    <h1 class="text-white pb-8 ">Reporte de la semana: 10-12-2023 </h1>
-
-                    <textarea v-model="textoIntroducido" class="bg-slate-100 mt-4 p-2 w-full " rows="16" placeholder="Introduce tu texto aquí"></textarea>
+                   
                     
-                    <button @click="mostrarAlerta" class="bg-slate-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full float-right mr-4 ">
+
+                    <form @submit.prevent="form.post('/reportes')">
+                        <input type="hidden" v-model="form.user_id">
+                        <input type="hidden" v-model="form.book_id">
+                        <textarea v-model="form.cont_report" class="bg-slate-100 mt-4 p-2 w-full " rows="16" placeholder="Introduce tu texto aquí"></textarea>
+
+                    <button type="submit" class="bg-slate-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full float-right mr-4 ">
                         Enviar
                     </button>
+                    </form>
+                    
                 </div>
 
-                <!-- <div class="right-side flex-1 p-6 bg-blue-950 text-center lg:block hidden sm:rounded-lg ">
-                    <img class="image" src="https://marketplace.canva.com/EADwi4xAG6I/1/0/256w/canva-monocromo-suspenso-bosque-foto-portada-de-libro-JBWCAd5q564.jpg" alt="Imagen de ejemplo">
-                    <div class="text-left pl-12"> 
-                        <h2 class="font-bold text-white">Reseña</h2>
-                        <h1 class="text-white">
-                            Aristócrata de nacimiento, vivió en la pobreza y el desenfreno
-                            durante su juventud, pero sus excelentes dotes personales y
-                            ambición lo llevarían a gobernar Roma en el siglo anterior al de
-                            Cristo.
-                        </h1>
-                    </div>
-                </div> -->
             </div>
         </div>
     </AuthenticatedLayout>
