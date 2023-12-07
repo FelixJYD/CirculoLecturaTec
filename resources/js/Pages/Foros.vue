@@ -2,7 +2,6 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import { Head } from "@inertiajs/vue3";
 import {ref, onMounted} from 'vue';
-import axios from "axios";
 const circles = ref([]);
 
 defineProps({
@@ -29,26 +28,13 @@ defineProps({
       </template>
 
       <div class="container mx-auto p-16 flex flex-wrap">
-        <div class="max-w-sm w-full lg:max-w-full lg:flex mb-8">
-          <div
-            class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
-            style="
-              background-image: url('https://marketplace.canva.com/EADwi4xAG6I/1/0/256w/canva-monocromo-suspenso-bosque-foto-portada-de-libro-JBWCAd5q564.jpg');
-            "
-            title="Libros"
-          ></div>
-          
-        </div>
-
-      
-
         <div v-for="book in books" :key="book.index"
         class="card-content">
           <div class="max-w-sm w-full lg:max-w-full lg:flex mb-8">
             <div
               class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
               style="
-                background-image: url('https://i.pinimg.com/474x/ae/71/ff/ae71ff736323dee255c42354988f88fd.jpg');"
+                background-image: url('https://www.cdcuauhtemoc.tecnm.mx/wp-content/uploads/2021/08/LOGO-VERTICAL-TECNM.png');"
               title="Libros"
             ></div>
             <div
@@ -78,9 +64,7 @@ defineProps({
               </div>
               <div class="flex items-center">
                 <div class="text-sm">
-                  <button class="bg-blue-950 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-                    + Unirse
-                  </button>
+                  
                 </div>
               </div>
             </div>

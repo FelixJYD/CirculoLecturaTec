@@ -17,9 +17,6 @@ return new class extends Migration
             $table->foreignId('book_id')
             ->constrained('books')
             ->cascadeOnDelete();
-            $table->foreignId('book_image')
-            ->constrained('books')
-            ->cascadeOnDelete();
             $table->timestamps();
 
         });

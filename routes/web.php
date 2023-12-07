@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReportController;
 use App\Models\Book;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -53,5 +54,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/circles-data', [CircleController::class, 'getCirclesData']);
+
+Route::post('/reportes', [ReportController::class, 'store'] );
 
 require __DIR__.'/auth.php';
